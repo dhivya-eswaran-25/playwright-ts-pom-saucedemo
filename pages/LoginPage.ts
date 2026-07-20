@@ -1,6 +1,6 @@
 import { Page, Locator } from '@playwright/test';
 import { BasePage } from './BasePage';
-import { CartPage } from './InventoryPage';
+import { InventoryPage } from './InventoryPage';
 
 export class LoginPage extends BasePage {
   readonly usernameInput: Locator;
@@ -20,6 +20,6 @@ export class LoginPage extends BasePage {
     await this.usernameInput.fill(username);
     await this.passwordInput.fill(password);
     await this.loginButton.click();
-    return new CartPage(this.page);
+    return new InventoryPage(this.page);
   }
 }
